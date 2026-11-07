@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Vida Sana | Recomendaciones saludables</title>
+<style>
+:root{--green:#1f6b4f;--green2:#2f8a65;--mint:#e8f5ee;--cream:#fbfaf5;--ink:#20312a;--muted:#68776f;--line:#e1e9e3;--white:#fff;--orange:#f2a65a}
+*{box-sizing:border-box}body{margin:0;background:var(--cream);color:var(--ink);font-family:Inter,Arial,sans-serif;line-height:1.5}
+header{background:#fff;border-bottom:1px solid var(--line);position:sticky;top:0;z-index:10}
+.nav{max-width:1120px;margin:auto;padding:15px 22px;display:flex;align-items:center;justify-content:space-between;gap:16px}
+.brand{font-weight:800;font-size:1.35rem;color:var(--green);letter-spacing:-.5px}.brand span{color:var(--orange)}
+nav{display:flex;gap:8px;flex-wrap:wrap}button,.btn{border:0;border-radius:12px;padding:10px 15px;background:var(--green);color:white;font-weight:700;cursor:pointer;text-decoration:none}
+nav button{background:transparent;color:var(--muted);padding:9px 11px}nav button.active,nav button:hover{background:var(--mint);color:var(--green)}
+main{max-width:1120px;margin:30px auto;padding:0 22px}.hero{background:linear-gradient(120deg,#e5f3e9,#f7f4e8);border-radius:24px;padding:34px;display:grid;grid-template-columns:1.4fr .8fr;gap:20px;align-items:center}
+.eyebrow{color:var(--green2);font-size:.78rem;font-weight:800;letter-spacing:1.4px;text-transform:uppercase}
+h1{font-size:clamp(2rem,4vw,3.4rem);line-height:1.08;letter-spacing:-1.7px;margin:10px 0 14px}h2{margin:0 0 15px;font-size:1.55rem}h3{margin:5px 0 8px}
+p{color:var(--muted)}.hero p{max-width:560px}.hero-art{font-size:7rem;text-align:center;background:#ffffff9c;border-radius:22px;padding:20px}
+.searchbar{display:flex;gap:9px;margin-top:20px}.searchbar input,.field input,.field select{width:100%;padding:13px 14px;border:1px solid var(--line);border-radius:11px;background:white;font:inherit}
+.section{margin:34px 0}.section-head{display:flex;justify-content:space-between;align-items:end;gap:10px}.filters{display:flex;gap:8px;flex-wrap:wrap;margin:15px 0}.filters button{background:#fff;color:var(--green);border:1px solid var(--line)}.filters button.selected{background:var(--green);color:#fff}
+.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:17px}.card{background:#fff;border:1px solid var(--line);border-radius:18px;padding:18px;box-shadow:0 5px 18px #173e2510}.emoji{font-size:2rem;background:var(--mint);width:58px;height:58px;border-radius:15px;display:grid;place-items:center}.tag{display:inline-block;background:#f0f6f1;color:var(--green);padding:4px 9px;border-radius:30px;font-size:.75rem;font-weight:700}.card p{font-size:.92rem;min-height:48px}.actions{display:flex;gap:8px;align-items:center}.secondary{background:#eef5ef;color:var(--green)}.textbtn{background:transparent;color:var(--green);padding:8px}
+.panel{background:#fff;border:1px solid var(--line);border-radius:18px;padding:22px}.two{display:grid;grid-template-columns:1fr 1fr;gap:18px}.habit{display:flex;align-items:center;gap:12px;padding:12px 0;border-bottom:1px solid var(--line)}.habit input{width:19px;height:19px;accent-color:var(--green)}.progress{height:10px;background:#edf1ed;border-radius:20px;overflow:hidden}.progress div{height:100%;background:var(--green2);width:0%;transition:.2s}
+footer{text-align:center;padding:28px;color:var(--muted);font-size:.85rem}
+.modal{display:none;position:fixed;inset:0;background:#14251dcc;z-index:30;align-items:center;justify-content:center;padding:18px}.modal.show{display:flex}.modalbox{background:white;border-radius:20px;max-width:540px;width:100%;padding:25px;max-height:90vh;overflow:auto}.close{float:right;background:#edf4ef;color:var(--green)}
+.formgrid{display:grid;grid-template-columns:1fr 1fr;gap:12px}.field label{display:block;font-weight:700;font-size:.86rem;margin-bottom:5px}.notice{background:#fff7e9;padding:12px;border-radius:12px;color:#76552a;font-size:.86rem}
+.hidden{display:none!important}
+@media(max-width:760px){.hero{grid-template-columns:1fr}.hero-art{font-size:4.5rem}.grid{grid-template-columns:1fr 1fr}.two{grid-template-columns:1fr}.nav{align-items:flex-start;flex-direction:column}nav{width:100%}}
+@media(max-width:500px){.grid{grid-template-columns:1fr}.searchbar{flex-direction:column}.formgrid{grid-template-columns:1fr}main{margin:18px auto;padding:0 14px}.hero{padding:23px}}
+</style></head>
+<body>
+<header><div class="nav"><div class="brand">vida sana<span>●</span></div><nav>
+<button class="active" data-page="inicio">Inicio</button><button data-page="habitos">Mis hábitos</button><button data-page="favoritos">Favoritos</button><button id="profileBtn">Mi perfil</button>
+</nav></div></header>
+<main>
+<section id="inicio" class="page">
+<div class="hero"><div><div class="eyebrow">Pequeños cambios, grandes resultados</div><h1>Tu bienestar empieza con una decisión.</h1><p>Encuentra ideas sencillas para alimentarte mejor, moverte más, descansar y cuidar tu bienestar emocional.</p>
+<div class="searchbar"><input id="search" placeholder="Buscar: hidratación, caminata, sueño..." aria-label="Buscar recomendaciones"><button id="searchBtn">Buscar</button></div></div><div class="hero-art" aria-label="Ilustración de bienestar">🌿🥑</div></div>
+<div class="section"><div class="section-head"><div><div class="eyebrow">Explora</div><h2>Recomendaciones para ti</h2></div><span class="tag" id="resultCount">6 recomendaciones</span></div>
+<div class="filters"><button class="selected" data-filter="Todas">Todas</button><button data-filter="Alimentación">Alimentación</button><button data-filter="Actividad física">Actividad física</button><button data-filter="Descanso">Descanso</button><button data-filter="Bienestar">Bienestar</button></div>
+<div class="grid" id="recommendations"></div></div>
+</section>
+<section id="habitos" class="page hidden">
+<div class="section-head"><div><div class="eyebrow">Constancia antes que perfección</div><h2>Seguimiento de hábitos</h2><p>Marca las actividades que completes hoy.</p></div><span class="tag" id="habitCount">0 de 5</span></div>
+<div class="panel"><div class="progress"><div id="progressBar"></div></div><div id="habitList"></div><p id="progressText">Has completado el 0% de tus hábitos.</p><button class="secondary" id="resetHabits">Reiniciar seguimiento</button></div>
+</section>
+<section id="favoritos" class="page hidden"><div class="eyebrow">Tu colección personal</div><h2>Recomendaciones favoritas</h2><p>Guarda aquí las ideas que quieras consultar después.</p><div class="grid" id="favoriteList"></div></section>
+</main>
+<footer>Vida Sana · Proyecto académico de Ingeniería Web · CUN · 2026<br><span>Contenido educativo general. No reemplaza la orientación de profesionales de la salud.</span></footer>
+<div class="modal" id="profileModal"><div class="modalbox"><button class="close" id="closeProfile">Cerrar ✕</button><div class="eyebrow">Tu espacio personal</div><h2>Perfil de bienestar</h2><p>Completa estos datos para adaptar la experiencia. Los datos se guardan únicamente en este navegador de demostración.</p>
+<div class="formgrid"><div class="field"><label>Nombre</label><input id="userName" placeholder="Tu nombre"></div><div class="field"><label>Edad</label><input id="userAge" type="number" min="13" max="110" placeholder="Edad"></div><div class="field"><label>Objetivo</label><select id="userGoal"><option>Mejorar mi alimentación</option><option>Ser más activo</option><option>Descansar mejor</option><option>Cuidar mi bienestar emocional</option></select></div><div class="field"><label>Actividad actual</label><select id="userActivity"><option>Baja</option><option>Moderada</option><option>Alta</option></select></div></div><p class="notice">Privacidad: esta demostración no envía información a servidores. Evita ingresar información médica sensible.</p><button id="saveProfile">Guardar perfil</button><p id="profileMessage"></p></div></div>
+<div class="modal" id="detailModal"><div class="modalbox"><button class="close" id="closeDetail">Cerrar ✕</button><div id="detailContent"></div></div></div>
+<script>
+const items=[
+{id:1,title:"Arma un plato equilibrado",cat:"Alimentación",emoji:"🥗",desc:"Combina verduras, una fuente de proteína y cereales o tubérculos.",detail:"Procura incluir variedad de alimentos. Una guía visual sencilla es dedicar buena parte del plato a verduras y frutas, acompañarlas con una fuente de proteína y completar con cereales o tubérculos. Ajusta las porciones a tus necesidades."},
+{id:2,title:"Mantén una hidratación regular",cat:"Alimentación",emoji:"💧",desc:"Ten agua disponible y recuerda beber durante el día.",detail:"Llevar una botella reutilizable puede ayudarte a recordar la hidratación. Las necesidades varían según la actividad, el clima y cada persona; presta atención a la sed y sigue indicaciones profesionales si tienes restricciones."},
+{id:3,title:"Camina durante el día",cat:"Actividad física",emoji:"🚶",desc:"Integra caminatas cortas y aumenta gradualmente tu movimiento.",detail:"Puedes comenzar con recorridos breves, pausas activas o subir escaleras si es seguro. Elige un ritmo cómodo y aumenta la duración progresivamente según tu condición."},
+{id:4,title:"Realiza pausas activas",cat:"Actividad física",emoji:"🧘",desc:"Levántate, cambia de postura y moviliza el cuerpo regularmente.",detail:"Si pasas mucho tiempo sentado, programa pausas para estirar suavemente cuello, hombros, espalda y piernas. Evita movimientos que causen dolor."},
+{id:5,title:"Construye una rutina de sueño",cat:"Descanso",emoji:"🌙",desc:"Procura horarios constantes y reduce pantallas antes de dormir.",detail:"Mantener horarios regulares, crear un ambiente oscuro y tranquilo y reducir estimulantes al final del día puede favorecer el descanso. Las necesidades de sueño son individuales."},
+{id:6,title:"Dedica tiempo a respirar",cat:"Bienestar",emoji:"🌼",desc:"Haz una pausa breve para respirar con calma y reconocer cómo te sientes.",detail:"Busca un lugar tranquilo, respira de manera cómoda y dirige tu atención al momento presente durante unos minutos. Si el malestar emocional persiste, considera buscar apoyo profesional."}
+];
+let filter="Todas", favorites=JSON.parse(localStorage.getItem("vs_favs")||"[]"), habits=JSON.parse(localStorage.getItem("vs_habits")||"{}");
+const $=s=>document.querySelector(s);
+function renderCards(target, data){$(target).innerHTML=data.length?data.map(x=>`<article class="card"><div class="emoji">${x.emoji}</div><p><span class="tag">${x.cat}</span></p><h3>${x.title}</h3><p>${x.desc}</p><div class="actions"><button onclick="showDetail(${x.id})">Ver detalle</button><button class="secondary" onclick="toggleFav(${x.id})">${favorites.includes(x.id)?"♥ Guardado":"♡ Favorito"}</button></div></article>`).join(""):'<div class="panel">Todavía no tienes elementos aquí. Explora las recomendaciones y guarda tus favoritas.</div>'}
+function renderHome(){let q=$("#search").value.toLowerCase();let data=items.filter(x=>(filter==="Todas"||x.cat===filter)&&(x.title+" "+x.desc+" "+x.cat).toLowerCase().includes(q));renderCards("#recommendations",data);$("#resultCount").textContent=data.length+" recomendaciones"}
+function toggleFav(id){favorites=favorites.includes(id)?favorites.filter(x=>x!==id):[...favorites,id];localStorage.setItem("vs_favs",JSON.stringify(favorites));renderHome();renderFavorites()}
+function renderFavorites(){renderCards("#favoriteList",items.filter(x=>favorites.includes(x.id)))}
+function showDetail(id){let x=items.find(i=>i.id===id);$("#detailContent").innerHTML=`<div class="emoji">${x.emoji}</div><p><span class="tag">${x.cat}</span></p><h2>${x.title}</h2><p>${x.detail}</p><button onclick="toggleFav(${x.id});showDetail(${x.id})">${favorites.includes(id)?"Quitar de favoritos":"Guardar en favoritos"}</button>`;$("#detailModal").classList.add("show")}
+function renderHabits(){let names=["Tomar agua durante el día","Incluir frutas o verduras","Realizar una pausa activa","Caminar o moverme","Preparar una rutina para dormir"];let done=names.filter((_,i)=>habits[i]).length;$("#habitList").innerHTML=names.map((n,i)=>`<label class="habit"><input type="checkbox" ${habits[i]?"checked":""} onchange="habits[${i}]=this.checked;localStorage.setItem('vs_habits',JSON.stringify(habits));renderHabits()"><span>${n}</span></label>`).join("");$("#habitCount").textContent=done+" de 5";$("#progressBar").style.width=(done/5*100)+"%";$("#progressText").textContent=`Has completado el ${Math.round(done/5*100)}% de tus hábitos.`}
+function showPage(id){document.querySelectorAll(".page").forEach(p=>p.classList.toggle("hidden",p.id!==id));document.querySelectorAll("nav [data-page]").forEach(b=>b.classList.toggle("active",b.dataset.page===id));if(id==="favoritos")renderFavorites();if(id==="habitos")renderHabits()}
+document.querySelectorAll("nav [data-page]").forEach(b=>b.addEventListener("click",()=>showPage(b.dataset.page)));
+document.querySelectorAll(".filters button").forEach(b=>b.addEventListener("click",()=>{filter=b.dataset.filter;document.querySelectorAll(".filters button").forEach(x=>x.classList.toggle("selected",x===b));renderHome()}));
+$("#searchBtn").onclick=renderHome;$("#search").addEventListener("keydown",e=>{if(e.key==="Enter")renderHome()});
+$("#profileBtn").onclick=()=>$("#profileModal").classList.add("show");$("#closeProfile").onclick=()=>$("#profileModal").classList.remove("show");$("#closeDetail").onclick=()=>$("#detailModal").classList.remove("show");
+$("#saveProfile").onclick=()=>{let profile={name:$("#userName").value,age:$("#userAge").value,goal:$("#userGoal").value,activity:$("#userActivity").value};localStorage.setItem("vs_profile",JSON.stringify(profile));$("#profileMessage").textContent="Perfil guardado en este navegador.";};
+$("#resetHabits").onclick=()=>{habits={};localStorage.setItem("vs_habits",JSON.stringify(habits));renderHabits()};
+let saved=JSON.parse(localStorage.getItem("vs_profile")||"null");if(saved){$("#userName").value=saved.name||"";$("#userAge").value=saved.age||"";$("#userGoal").value=saved.goal||"Mejorar mi alimentación";$("#userActivity").value=saved.activity||"Baja"}
+renderHome();renderFavorites();
+</script></body></html>
